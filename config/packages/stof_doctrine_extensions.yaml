@@ -1,0 +1,5 @@
+stof_doctrine_extensions:
+    default_locale: en_US
+    orm:
+        default: # Ici, laissez "default" sauf si vous avez plusieurs connexions différentes à vos bases de données et dans ce cas, mettez le nom de votre connexion
+            sluggable: true
