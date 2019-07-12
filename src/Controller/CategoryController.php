@@ -26,7 +26,7 @@ class CategoryController extends AbstractController
     }
 
     /**
-     * @Route("/category/{category]", name="category_index", methods={"GET"})
+     * @Route("/categorys/{category]", name="category_index", methods={"GET"})
      * @param CategoryRepository $categoryRepository
      * @param Category $category
      * @return Response
@@ -34,12 +34,13 @@ class CategoryController extends AbstractController
     public function findAllPostByCategory(CategoryRepository $categoryRepository , Category $category): Response
     {
         $ad =$categoryRepository->findOneBy(array(
-            'id' => $category
+            'id' => $category,
         ));
         $posts = $ad->getPosts();
-
+        $name = $ad->getName();
         return $this->render('category/findAllPostByCategory.html.twig', [
             'post' => $posts,
+            'name' => $name
         ]);
 
     }

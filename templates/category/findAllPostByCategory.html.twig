@@ -1,0 +1,7 @@
+{% block body %}
+{{ name }}
+
+    {% for post in posts %}
+        {{ post.title }}
+    {% endfor %}
+{% endblock %}
